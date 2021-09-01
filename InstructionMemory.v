@@ -41,7 +41,12 @@ module InstructionMemory(Address, Instruction);
     input [31:0] Address;        // Input Address 
     output reg [31:0] Instruction;    // Instruction at memory location Address
     reg[31:0] memory[127:0]; //create a 128-word memory.
-    reg[6:0] index = Address[8:2] // 7 bit index 
-    Instruction = memory[index];
+    //initialize memory 
+    integer i;
+    initial begin
+        for (i = 0; i < 127; ++i)
+            memory[i] = 3*i;
+     end 
+    assign Instruction = memory[Address[8:2]];
     
 endmodule
