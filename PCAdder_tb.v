@@ -21,6 +21,10 @@ module PCAdder_tb();
 	initial begin
 	
     /* Please fill in the implementation here... */
+		PCResult <= 0;
+		
+		#10;
+		$display ("PCResult = %d, PCAddResult = %d", PCResult, PCAddResult);
 	
 	end
 
