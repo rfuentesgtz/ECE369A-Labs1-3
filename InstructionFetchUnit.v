@@ -42,7 +42,7 @@ module InstructionFetchUnit(Instruction, Reset, Clk);
     input [31:0] PCResult;
     output reg [31:0] PCAddResult;
     PCAdder PCAdder_1(PCResult, PCAddResult);
-    //ProgramCounter(PCAddResult[31:0], Clk, Rst, PCResult);
-    //InstructionMemory(PCResult, 
+    ProgramCounter ProgramCounter_1(PCAddResult, Clk, Rst, PCResult);
+    InstructionMemory InstructionMemory_1(PCResult, Instruction);
 endmodule
 
