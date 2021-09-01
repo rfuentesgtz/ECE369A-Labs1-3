@@ -17,12 +17,11 @@ module InstructionMemory_tb();
 		.Address(Address),
         .Instruction(Instruction)
 	);
-
-	initial begin
-	
-    /* Please fill in the implementation here... */
-	
-	end
-
+    //do a for loop, and increment address by 4 every 2 nano-seconds. 
+    initial begin
+        for (i = 0; i < 127; ++i)
+		$display("memory[i]: ", memory[i]);
+	    #2;
+     end 
 endmodule
 
