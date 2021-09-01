@@ -25,7 +25,8 @@
 //   (c) InstructionMemory.v
 // Connect the modules together in a testbench so that the instruction memory
 // outputs the contents of the next instruction indicated by the memory location
-// in the PC at every clock cycle. Please initialize the instruction memory with
+// in the PC at every clock cycle. 
+//Please initialize the instruction memory with
 // some preliminary values for debugging purposes.
 //
 // @@ The 'Reset' input control signal is connected to the program counter (PC) 
@@ -38,7 +39,10 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 module InstructionFetchUnit(Instruction, Reset, Clk);
-
-    /* Please fill in the implementation here... */
+    input [31:0] PCResult;
+    output reg [31:0] PCAddResult;
+    PCAdder PCAdder_1(PCResult, PCAddResult);
+    //ProgramCounter(PCAddResult[31:0], Clk, Rst, PCResult);
+    //InstructionMemory(PCResult, 
 endmodule
 
